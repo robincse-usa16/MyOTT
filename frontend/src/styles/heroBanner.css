@@ -1,6 +1,6 @@
 .hero-banner {
   width: 100%;
-  height: 980px;
+  height: 820px;
   position: relative;
   overflow: hidden;
   background: #000;
@@ -17,7 +17,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
 }
 
@@ -25,7 +25,6 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-
   background:
     linear-gradient(
       to bottom,
@@ -89,10 +88,6 @@
   cursor: pointer;
 }
 
-.hero-play-btn:hover {
-  background: #f2f2f2;
-}
-
 .hero-circle-btn {
   width: 52px;
   height: 52px;
@@ -105,16 +100,11 @@
   cursor: pointer;
 }
 
-.hero-circle-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
 .hero-right-controls {
   position: absolute;
   right: 66px;
   bottom: 54px;
   z-index: 5;
-
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -139,10 +129,6 @@
   cursor: pointer;
 }
 
-.hero-slider-controls button:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
 .hero-dots {
   display: flex;
   align-items: center;
@@ -164,8 +150,6 @@
   background: #ff202d;
 }
 
-/* Large Desktop */
-
 @media (min-width: 1600px) {
   .hero-banner {
     height: 880px;
@@ -180,8 +164,6 @@
     width: 340px;
   }
 }
-
-/* Tablet */
 
 @media (max-width: 1024px) {
   .hero-banner {
@@ -203,14 +185,14 @@
   }
 }
 
-/* Mobile */
-
 @media (max-width: 768px) {
   .hero-banner {
-    height: 620px;
+    height: 720px;
   }
 
   .hero-bg-image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center top;
   }
@@ -218,38 +200,40 @@
   .hero-dark-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.02) 0%,
-      rgba(0, 0, 0, 0.08) 40%,
-      rgba(0, 0, 0, 0.78) 72%,
-      rgba(0, 0, 0, 1) 100%
+      rgba(0, 0, 0, 0.04) 0%,
+      rgba(0, 0, 0, 0.06) 35%,
+      rgba(0, 0, 0, 0.55) 62%,
+      rgba(0, 0, 0, 0.95) 88%,
+      #000 100%
     );
   }
 
   .hero-info {
     left: 16px;
     right: 16px;
-    bottom: 62px;
-
+    bottom: 92px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    z-index: 4;
   }
 
   .hero-typography {
     width: 170px;
-    max-height: 95px;
+    max-height: 110px;
     object-position: center;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
 
   .hero-meta {
-    font-size: 18px;
-    margin-bottom: 22px;
+    font-size: 17px;
+    margin-bottom: 18px;
   }
 
   .hero-actions {
     justify-content: center;
+    gap: 10px;
   }
 
   .hero-play-btn {
@@ -266,8 +250,7 @@
   .hero-right-controls {
     left: 0;
     right: 0;
-    bottom: 18px;
-
+    bottom: 42px;
     align-items: center;
   }
 
@@ -280,19 +263,25 @@
   }
 }
 
-/* Small Mobile */
-
 @media (max-width: 420px) {
   .hero-banner {
-    height: 600px;
+    height: 700px;
+  }
+
+  .hero-info {
+    bottom: 90px;
   }
 
   .hero-typography {
-    width: 150px;
+    width: 155px;
   }
 
   .hero-play-btn {
     padding: 0 18px;
     font-size: 12px;
+  }
+
+  .hero-right-controls {
+    bottom: 40px;
   }
 }
