@@ -10,43 +10,41 @@ const HeroBanner = ({ banners = [] }) => {
   const currentBanner = banners[currentIndex];
 
   const nextBanner = () => {
-    setCurrentIndex((prev) => {
-      if (prev === banners.length - 1) return 0;
-      return prev + 1;
-    });
+    setCurrentIndex((prev) => (prev === banners.length - 1 ? 0 : prev + 1));
   };
 
   const previousBanner = () => {
-    setCurrentIndex((prev) => {
-      if (prev === 0) return banners.length - 1;
-      return prev - 1;
-    });
+    setCurrentIndex((prev) => (prev === 0 ? banners.length - 1 : prev - 1));
   };
 
   useEffect(() => {
     if (!banners.length) return;
 
-    const timer = setInterval(() => {
-      nextBanner();
-    }, 5000);
-
+    const timer = setInterval(nextBanner, 5000);
     return () => clearInterval(timer);
   }, [banners.length]);
 
   if (!currentBanner) return null;
 
   return (
-    <section
-      className="hero-banner"
-      style={{
-        backgroundImage: `url(${currentBanner.bannerImage})`,
-      }}
-    >
+    <section className="hero-banner">
+      <picture className="hero-picture">
+        <source
+          media="(max-width: 768px)"
+          srcSet={currentBanner.mobileBanner}
+        />
+        <img
+          className="hero-bg-image"
+          src={currentBanner.desktopBanner}
+          alt={currentBanner.title}
+        />
+      </picture>
+
       <div className="hero-dark-overlay">
         <div className="hero-info">
           <img
-            className="hero-poster"
-            src={currentBanner.posterImage}
+            className="hero-typography"
+            src={currentBanner.typography}
             alt={currentBanner.title}
           />
 
@@ -57,6 +55,7 @@ const HeroBanner = ({ banners = [] }) => {
           <div className="hero-actions">
             <button
               className="hero-play-btn"
+              type="button"
               onClick={() => navigate(`/content/${currentBanner.contentId}`)}
             >
               <Crown size={18} />
@@ -64,7 +63,7 @@ const HeroBanner = ({ banners = [] }) => {
             </button>
 
             <button className="hero-circle-btn" type="button">
-              <Plus size={24} />
+              <Plus size={25} />
             </button>
 
             <button className="hero-circle-btn" type="button">
@@ -73,26 +72,27 @@ const HeroBanner = ({ banners = [] }) => {
           </div>
         </div>
 
-        <div className="hero-slider-controls">
-          <button type="button" onClick={previousBanner}>
-            <ChevronLeft size={28} />
-          </button>
+        <div className="hero-right-controls">
+          <div className="hero-slider-controls">
+            <button type="button" onClick={previousBanner}>
+              <ChevronLeft size={28} />
+            </button>
 
-          <button type="button" onClick={nextBanner}>
-            <ChevronRight size={28} />
-          </button>
-        </div>
+            <button type="button" onClick={nextBanner}>
+              <ChevronRight size={28} />
+            </button>
+          </div>
 
-        <div className="hero-dots">
-          {banners.map((banner, index) => (
-            <button
-              key={banner.id}
-              type="button"
-              className={`dot ${currentIndex === index ? "active" : ""}`}
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Go to banner ${index + 1}`}
-            />
-          ))}
+          <div className="hero-dots">
+            {banners.map((banner, index) => (
+              <button
+                key={banner.id}
+                type="button"
+                className={`dot ${currentIndex === index ? "active" : ""}`}
+                onClick={() => setCurrentIndex(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
