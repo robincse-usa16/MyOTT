@@ -1,0 +1,182 @@
+.hero-banner {
+  width: 100%;
+  height: 760px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: background-image 0.4s ease-in-out;
+}
+
+.hero-dark-overlay {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.18) 35%,
+      rgba(0, 0, 0, 0.7) 75%,
+      #000 100%
+    ),
+    linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.06) 55%);
+}
+
+.hero-info {
+  position: absolute;
+  left: 64px;
+  bottom: 62px;
+  z-index: 5;
+}
+
+.hero-poster {
+  width: 245px;
+  height: 138px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-bottom: 28px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55);
+}
+
+.hero-meta {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.hero-meta span {
+  margin: 0 8px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-play-btn {
+  height: 44px;
+  padding: 0 34px;
+  border-radius: 28px;
+  border: none;
+  background: #ffffff;
+  color: #111111;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-play-btn:hover {
+  background: #f1f1f1;
+}
+
+.hero-circle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1.5px solid #ffffff;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+}
+
+.hero-circle-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.hero-slider-controls {
+  position: absolute;
+  right: 64px;
+  bottom: 108px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 6;
+}
+
+.hero-slider-controls button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+}
+
+.hero-slider-controls button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.hero-dots {
+  position: absolute;
+  right: 68px;
+  bottom: 62px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  z-index: 6;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  display: block;
+  padding: 0;
+}
+
+.dot.active {
+  width: 42px;
+  border-radius: 20px;
+  background: #ff202d;
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 620px;
+  }
+
+  .hero-info {
+    left: 22px;
+    right: 22px;
+    bottom: 48px;
+  }
+
+  .hero-poster {
+    width: 210px;
+    height: 118px;
+  }
+
+  .hero-meta {
+    font-size: 15px;
+  }
+
+  .hero-play-btn {
+    padding: 0 20px;
+    font-size: 12px;
+  }
+
+  .hero-circle-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-slider-controls {
+    right: 22px;
+    bottom: 120px;
+  }
+
+  .hero-dots {
+    right: 24px;
+    bottom: 30px;
+  }
+}

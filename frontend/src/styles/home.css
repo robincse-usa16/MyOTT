@@ -1,0 +1,106 @@
+.hero-banner {
+  height: 720px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent),
+    linear-gradient(to top, #050505 5%, transparent 50%);
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.hero-content {
+  max-width: 560px;
+  margin-top: 80px;
+}
+
+.hero-content h1 {
+  font-size: 62px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #d1d1d1;
+  margin-bottom: 28px;
+}
+
+.play-btn {
+  background: #ff1744;
+  color: white;
+  border: none;
+  padding: 13px 24px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.home-content {
+  padding: 0 48px 60px;
+  margin-top: -90px;
+  position: relative;
+  z-index: 5;
+}
+
+.category-section {
+  margin-bottom: 42px;
+}
+
+.section-header {
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.content-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scrollbar-width: none;
+}
+
+.content-row::-webkit-scrollbar {
+  display: none;
+}
+
+.content-row.vertical {
+  align-items: stretch;
+}
+
+.content-row.horizontal {
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 540px;
+  }
+
+  .hero-overlay {
+    padding: 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .home-content {
+    padding: 0 18px 40px;
+    margin-top: -70px;
+  }
+}
