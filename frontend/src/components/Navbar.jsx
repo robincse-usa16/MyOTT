@@ -1,25 +1,38 @@
-import { Search, User } from "lucide-react";
+import { Search, CircleUserRound } from "lucide-react";
 import "../styles/navbar.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="nav-logo">Bingme</div>
+    <header className="navbar">
+      <div className="navbar-top">
+        <div className="navbar-left">
+          <a href="/" className="nav-logo">
+            Bing<span>+</span>
+          </a>
 
-      <div className="nav-links">
-        <a href="/">Home</a>
-        <a href="/">Movies</a>
-        <a href="/">Series</a>
-        <a href="/">Sports</a>
-        <a href="/">Live TV</a>
-      </div>
+          <nav className="nav-menu">
+            <a href="/">Home</a>
+            <a href="/">Sports</a>
+            <a href="/">Movies</a>
+            <a href="/">Free</a>
+          </nav>
+        </div>
 
-      <div className="nav-actions">
-        <Search size={22} />
-        <button className="subscribe-btn">Subscribe</button>
-        <User size={22} />
+        <div className="navbar-actions">
+          <button className="nav-icon-btn" type="button">
+            <Search size={24} />
+          </button>
+
+          <button className="nav-subscribe-btn" type="button">
+            Subscribe
+          </button>
+
+          <button className="nav-icon-btn" type="button">
+            <CircleUserRound size={24} />
+          </button>
+        </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
